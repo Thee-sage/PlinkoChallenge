@@ -1,0 +1,1378 @@
+/* Game.module.css - Complete with enhanced responsive styling */
+
+/* Enhanced Game Container */
+.gameContainer {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1400px;
+    margin: 2rem auto;
+    background: linear-gradient(90deg, #000000 0%, #000000 100%);
+    border-radius: 32px;
+    overflow: hidden;
+    padding: 4px;
+  }
+  
+  .innerContainer {
+    background: linear-gradient(90deg, #000000 0%, #000000 100%);
+    border-radius: 28px;
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  /* Enhanced Title Section */
+  .title {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-shadow: 0 2px 10px rgba(111, 76, 255, 0.3);
+    letter-spacing: 1px;
+    position: relative;
+  }
+  
+  .title::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #6f4cff, #b270ff);
+    border-radius: 2px;
+  }
+  
+  /* Game Content - Dark Theme */
+  .gameContent {
+    display: flex;
+    gap: 3rem;
+    background: rgba(17, 24, 39, 0.95);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(74, 222, 128, 0.1);
+  }
+  
+  /* ===== CANVAS CONTAINER - FIXED FOR PROPER SCALING ===== */
+  .canvasContainer {
+    position: relative;
+    width: 800px; /* Fixed width matching the internal canvas dimensions */
+    height: 800px; /* Fixed height matching the internal canvas dimensions */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(111, 76, 255, 0.08);
+    background: linear-gradient(135deg, #ffffff 0%, #fafafe 100%);
+    padding: 0; /* Remove padding completely */
+    flex-shrink: 0;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    will-change: transform;
+    margin: 0 auto; /* Center horizontally */
+  }
+  
+  
+  .canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    display: block;
+    margin: 0; /* Remove any potential margin */
+    touch-action: manipulation; /* Better touch handling */
+  }
+  
+  /* Enhanced Controls Panel - Dark Theme */
+  .controlsPanel {
+    width: 380px;
+    flex-shrink: 0;
+    padding: 2rem;
+    background: rgba(17, 24, 39, 0.8);
+    border-radius: 20px;
+    align-self: flex-start;
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(74, 222, 128, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.1);
+  }
+  
+  /* Enhanced Input Group */
+  .inputGroup {
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  /* Update input group text color */
+  .label {
+    display: block;
+    color: #e5e7eb;  /* Light color for dark background */
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .inputGroup::after {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(25%);
+    color: #4ade80;  /* Changed to match the theme */
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.8;
+  }
+  
+  /* Update input styling */
+  .input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    border-radius: 14px;
+    background: rgba(17, 24, 39, 0.8);
+    color: #4ade80;
+    font-size: 1.1rem;
+    padding-right: 3rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .inputWrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .inputValue {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    color: #4ade80;
+    pointer-events: auto;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: #4ade80;
+    box-shadow: 
+        0 0 0 4px rgba(74, 222, 128, 0.12),
+        0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Remove spinner from number input */
+  .input::-webkit-outer-spin-button,
+  .input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  .input[type=number] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+  }
+  
+  /* Update button styling */
+  .button {
+    width: 100%;
+    padding: 1.25rem;
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    color: #0f172a;
+    border: none;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(74, 222, 128, 0.25);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.35);
+    outline: none;
+  }
+  
+  .button:active {
+    transform: translateY(1px);
+    outline: none;
+    box-shadow: 0 2px 10px rgba(74, 222, 128, 0.25);
+  }
+  .button:focus{
+    outline: none;
+  }
+  .button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    outline: none;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+  }
+  
+  /* Enhanced Results Container */
+  .resultsContainer {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(17, 24, 39, 0.95);
+    border-radius: 16px;
+    border: 1px solid rgba(74, 222, 128, 0.1);
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(74, 222, 128, 0.1);
+    backdrop-filter: blur(10px);
+  }
+  
+  .resultsTitle {
+    color: #f9fafb;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid rgba(74, 222, 128, 0.1);
+    letter-spacing: 0.5px;
+  }
+  
+  .resultItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.875rem 0;
+    color: #e5e7eb;
+    font-size: 1rem;
+  }
+  
+  .resultValue {
+    font-weight: 600;
+    color: #4ade80;
+    padding: 0.375rem 1rem;
+    background: rgba(17, 24, 39, 0.8);
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    min-width: 100px;
+    text-align: center;
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    text-shadow: 0 0 8px rgba(74, 222, 128, 0.4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px; /* Space between number and logo */
+  }
+  
+  .resultValue:hover {
+    background: rgba(17, 24, 39, 0.9);
+    transform: translateX(-2px);
+    border-color: rgba(74, 222, 128, 0.3);
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.15);
+  }
+  
+  /* Enhanced Error Message */
+  .errorMessage {
+    margin-top: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255, 235, 235, 0.95);
+    border: 1px solid rgba(220, 38, 38, 0.15);
+    border-radius: 14px;
+    color: #dc2626;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.1);
+  }
+  
+  .errorMessage::before {
+    content: '⚠️';
+    font-size: 1.2rem;
+  }
+  
+  /* Last Multipliers styling */
+  .lastMultipliersContainer {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    background: rgba(17, 24, 39, 0.95);
+    border-radius: 16px;
+    border: 1px solid rgba(74, 222, 128, 0.1);
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(74, 222, 128, 0.1);
+  }
+  
+  .lastMultipliersTitle {
+    color: #f9fafb;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+  
+  .multipliersGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .multiplierBadge {
+    background: rgba(74, 222, 128, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    color: #4ade80;
+    padding: 0.5rem;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+  }
+  
+  .multiplierBadge:hover {
+    transform: translateY(-2px);
+    background: rgba(74, 222, 128, 0.15);
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.15);
+  }
+  
+  /* Tooltip styling */
+  .tooltipContainer {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: help;
+    z-index: 99999;
+  }
+  
+  .tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(17, 24, 39, 0.95);
+    color: #fff;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    backdrop-filter: blur(4px);
+    width: max-content;
+    min-width: 200px;
+    max-width: 300px;
+    margin-bottom: 8px;
+    /* Ensure text wraps properly */
+    white-space: normal;
+    line-height: 1.4;
+  }
+  
+  .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(17, 24, 39, 0.95) transparent transparent transparent;
+  }
+  
+  .tooltipContainer:hover .tooltip {
+    visibility: visible;
+    animation: fadeIn 0.2s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+  }
+  
+  /* COMPLETE SET OF COMPREHENSIVE MEDIA QUERIES */
+  
+  /* ===== LARGE DESKTOPS (1401px - 1920px) ===== */
+  @media screen and (min-width: 1401px) and (max-width: 1920px) {
+    .gameContainer {
+      max-width: 1200px !important;
+    }
+    
+    .gameContent {
+      gap: 2.5rem !important;
+      padding: 2.5rem !important;
+    }
+    
+    .canvasContainer {
+      width: 700px !important;
+      height: 700px !important;
+      border-radius: 24px !important;
+    }
+    
+    .canvas {
+      border-radius: 24px !important;
+    }
+    
+    .controlsPanel {
+      width: 350px !important;
+      padding: 2rem !important;
+      border-radius: 24px !important;
+    }
+    
+    .button {
+      padding: 1.25rem !important;
+      font-size: 1.15rem !important;
+    }
+  }
+  
+  
+  
+  /* ===== SMALL DESKTOPS (992px - 1200px) ===== */
+  @media screen and (min-width: 992px) and (max-width: 2000px) {
+    .gameContainer {
+      max-width: 950px !important;
+    }
+    
+    .innerContainer {
+      padding: 2rem !important;
+    }
+    
+    .gameContent {
+      gap: 1.75rem !important;
+      padding: 2rem !important;
+    }
+    
+    .canvasContainer {
+      width: 580px !important;
+      height: 580px !important;
+      border-radius: 20px !important;
+    }
+    
+    .canvas {
+      border-radius: 20px !important;
+    }
+    
+    .controlsPanel {
+      width: 310px !important;
+      padding: 1.5rem !important;
+      border-radius: 20px !important;
+    }
+    
+    .button {
+      padding: 1rem !important;
+      font-size: 1.05rem !important;
+    }
+  }
+  
+  /* ===== TABLETS (768px - 991px) ===== */
+  @media screen and (min-width: 768px) and (max-width: 2000px) {
+    .gameContainer {
+      max-width: 800px !important;
+    }
+    
+    .innerContainer {
+      padding: 1.5rem !important;
+    }
+    
+    .gameContent {
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 1.5rem !important;
+      padding: 1.75rem !important;
+    }
+    
+    .canvasContainer {
+      width: 600px !important;
+      height: 600px !important;
+      max-width: 100% !important;
+      border-radius: 18px !important;
+    }
+    
+    .canvas {
+      border-radius: 18px !important;
+    }
+    
+    .controlsPanel {
+      width: 100% !important;
+      max-width: 600px !important;
+      padding: 1.5rem !important;
+      border-radius: 18px !important;
+    }
+    
+    .button {
+      padding: 1rem !important;
+      font-size: 1rem !important;
+    }
+  }
+  
+  /* ===== LARGE MOBILES (576px - 767px) ===== */
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+    .gameContainer {
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: transparent !important;
+    }
+    
+    .innerContainer {
+      padding: 1rem !important;
+      background: transparent !important;
+    }
+    
+    .gameContent {
+      width: 92% !important;
+      max-width: 500px !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 1.25rem !important;
+      padding: 1.5rem !important;
+      margin: 0 auto !important;
+      border-radius: 20px !important;
+    }
+    
+    .canvasContainer {
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: 1/1 !important;
+      max-width: 450px !important;
+      border-radius: 16px !important;
+    }
+    
+    .canvas {
+      border-radius: 16px !important;
+    }
+    
+    .controlsPanel {
+      width: 100% !important;
+      padding: 1.25rem !important;
+      border-radius: 16px !important;
+    }
+    
+    .input {
+      padding: 0.875rem 1.125rem !important;
+      font-size: 1rem !important;
+    }
+    
+    .button {
+      padding: 1rem !important;
+      font-size: 1rem !important;
+      border-radius: 14px !important;
+    }
+  }
+  
+  /* ===== MOBILES (391px - 575px) ===== */
+  @media screen and (min-width: 321px) and (max-width: 575px) {
+    /* ===== CONTAINERS AND LAYOUT ===== */
+    .gameContainer {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: transparent !important;
+      border: none !important;
+    }
+    
+    .innerContainer {
+      padding: 0.5rem !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      border: none !important;
+    }
+    
+    /* Core game content - narrower with nice rounded corners */
+    .gameContent {
+      width: 94% !important;
+      max-width: 390px !important;
+      border-radius: 20px !important;
+      padding: 0.75rem 0.75rem 1.5rem 0.75rem !important;
+      margin: 0 auto !important;
+      background: rgba(17, 24, 39, 0.95) !important;
+      border: 1px solid rgba(74, 222, 128, 0.25) !important;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3) !important;
+      gap: 0.75rem !important;
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+    
+    /* ===== CANVAS CONTAINER ===== */
+    .canvasContainer {
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: 1 / 1 !important;
+      max-width: 100% !important;
+      border-radius: 12px !important;
+      overflow: hidden !important;
+      margin: 0 auto 0.75rem auto !important;
+      padding: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+    
+    .canvas {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      border-radius: 12px !important;
+      display: block !important;
+      object-fit: fill !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    
+    /* ===== CONTROLS PANEL ===== */
+    .controlsPanel {
+      width: 100% !important;
+      max-width: 100% !important;
+      border-radius: 14px !important;
+      padding: 0.75rem !important;
+      background: rgba(17, 24, 39, 0.7) !important;
+      border: 1px solid rgba(74, 222, 128, 0.1) !important;
+      box-shadow: none !important;
+    }
+    
+    /* ===== INPUT STYLING ===== */
+    .inputGroup {
+      margin-bottom: 0.75rem !important;
+    }
+    
+    .label {
+      font-size: 0.95rem !important;
+      margin-bottom: 0.5rem !important;
+      color: #e5e7eb !important;
+    }
+    
+    .input {
+      padding: 0.625rem 1rem !important;
+      font-size: 0.95rem !important;
+      height: 2.5rem !important;
+      border-radius: 10px !important;
+    }
+    
+    /* ===== BUTTON STYLING ===== */
+    .button {
+      width: 100% !important;
+      padding: 0.75rem !important;
+      border-radius: 12px !important;
+      font-size: 1rem !important;
+      background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%) !important;
+      margin-bottom: 0.75rem !important;
+    }
+    
+    /* ===== RESULTS CONTAINER ===== */
+    .resultsContainer {
+      width: 100% !important;
+      border-radius: 14px !important;
+      padding: 0.75rem !important;
+      margin-top: 0.75rem !important;
+      background: rgba(17, 24, 39, 0.7) !important;
+      border: 1px solid rgba(74, 222, 128, 0.1) !important;
+    }
+    
+    .resultsTitle {
+      font-size: 1rem !important;
+      margin-bottom: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
+    }
+    
+    .resultItem {
+      padding: 0.5rem 0 !important;
+      font-size: 0.9rem !important;
+    }
+    
+    .resultValue {
+      padding: 0.375rem 0.75rem !important;
+      min-width: 80px !important;
+      font-size: 0.9rem !important;
+    }
+    
+    /* ===== MULTIPLIERS CONTAINER ===== */
+    .lastMultipliersContainer {
+      width: 100% !important;
+      border-radius: 14px !important;
+      padding: 0.75rem !important;
+      margin-top: 0.75rem !important;
+      background: rgba(17, 24, 39, 0.7) !important;
+      border: 1px solid rgba(74, 222, 128, 0.1) !important;
+    }
+  }
+  
+  /* ===== SMALL MOBILES (361px - 390px) ===== */
+  @media screen and (min-width: 361px) and (max-width: 390px) {
+    /* Core game content */
+    .gameContent {
+      width: 94% !important;
+      max-width: 370px !important;
+      border-radius: 18px !important;
+      padding: 0.75rem 0.75rem 1.5rem 0.75rem !important;
+    }
+    
+    /* Canvas container */
+    .canvasContainer {
+      border-radius: 12px !important;
+    }
+    
+    .canvas {
+      border-radius: 12px !important;
+    }
+    
+    /* Controls panel */
+    .controlsPanel {
+      border-radius: 12px !important;
+      padding: 0.75rem !important;
+    }
+    
+    /* Input styling */
+    .inputGroup {
+      margin-bottom: 0.75rem !important;
+    }
+    
+    .label {
+      font-size: 0.9rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .input {
+      padding: 0.625rem 0.875rem !important;
+      font-size: 0.9rem !important;
+      border-radius: 10px !important;
+    }
+    
+    /* Button styling */
+    .button {
+      padding: 0.75rem !important;
+      font-size: 0.95rem !important;
+      border-radius: 10px !important;
+    }
+    
+    /* Results container */
+    .resultsContainer,
+    .lastMultipliersContainer {
+      border-radius: 12px !important;
+      padding: 0.75rem !important;
+    }
+    
+    .resultItem {
+      font-size: 0.85rem !important;
+    }
+    
+    .resultValue {
+      min-width: 70px !important;
+      font-size: 0.85rem !important;
+    }
+  }
+  
+  /* ===== EXTRA SMALL MOBILES (320px - 360px) ===== */
+  @media screen and (max-width: 360px) {
+    /* Core game content */
+    .gameContent {
+      width: 94% !important;
+      max-width: 340px !important;
+      border-radius: 16px !important;
+      padding: 0.625rem 0.625rem 1.25rem 0.625rem !important;
+    }
+    
+    /* Canvas container */
+    .canvasContainer {
+      border-radius: 10px !important;
+      margin-bottom: 0.625rem !important;
+    }
+    
+    .canvas {
+      border-radius: 10px !important;
+    }
+    
+    /* Controls panel */
+    .controlsPanel {
+      border-radius: 10px !important;
+      padding: 0.625rem !important;
+    }
+    
+    /* Input styling */
+    .inputGroup {
+      margin-bottom: 0.625rem !important;
+    }
+    
+    .label {
+      font-size: 0.875rem !important;
+      margin-bottom: 0.375rem !important;
+    }
+    
+    .input {
+      padding: 0.5rem 0.75rem !important;
+      font-size: 0.875rem !important;
+      height: 2.25rem !important;
+      border-radius: 8px !important;
+    }
+    
+    /* Button styling */
+    .button {
+      padding: 0.625rem !important;
+      font-size: 0.875rem !important;
+      border-radius: 8px !important;
+    }
+    
+    /* Results container */
+    .resultsContainer,
+    .lastMultipliersContainer {
+      border-radius: 10px !important;
+      padding: 0.625rem !important;
+      margin-top: 0.625rem !important;
+    }
+    
+    .resultsTitle {
+      font-size: 0.9rem !important;
+      margin-bottom: 0.375rem !important;
+      padding-bottom: 0.375rem !important;
+    }
+    
+    .resultItem {
+      padding: 0.375rem 0 !important;
+      font-size: 0.8rem !important;
+    }
+    
+    .resultValue {
+      padding: 0.25rem 0.5rem !important;
+      min-width: 60px !important;
+      font-size: 0.8rem !important;
+    }
+    
+    /* Multipliers styling */
+    .lastMultipliersTitle {
+      font-size: 0.875rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .multipliersGrid {
+      gap: 0.375rem !important;
+    }
+    
+    .multiplierBadge {
+      padding: 0.25rem !important;
+      font-size: 0.75rem !important;
+      border-radius: 6px !important;
+    }
+  }
+  
+  /* ===== LANDSCAPE MODE ===== */
+  @media screen and (max-height: 600px) and (orientation: landscape) {
+    .gameContainer {
+      margin: 0.25rem auto !important;
+    }
+    
+    .innerContainer {
+      padding: 0.75rem !important;
+    }
+    
+    .gameContent {
+      flex-direction: row !important;
+      align-items: flex-start !important;
+      gap: 0.75rem !important;
+      padding: 0.75rem !important;
+    }
+    
+    .canvasContainer {
+      width: 45% !important;
+      height: auto !important;
+      aspect-ratio: 1 / 1 !important;
+      max-height: 80vh !important;
+    }
+    
+    .controlsPanel {
+      width: 55% !important;
+      max-height: 80vh !important;
+      overflow-y: auto !important;
+      padding: 0.75rem !important;
+    }
+    
+    .button {
+      padding: 0.5rem !important;
+    }
+    
+    .resultsContainer,
+    .lastMultipliersContainer {
+      margin-top: 0.5rem !important;
+      padding: 0.5rem !important;
+    }
+  }
+  
+  /* ===== HIGH DPI SCREENS ===== */
+  @media screen and (-webkit-min-device-pixel-ratio: 2),
+         screen and (min-resolution: 192dpi) {
+    .canvas {
+      image-rendering: auto !important;
+    }
+    
+    .canvasContainer {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+    }
+  }
+  
+  /* ===== SAFARI FIXES ===== */
+  @supports (-webkit-touch-callout: none) {
+    .canvasContainer {
+      transform: translateZ(0) !important;
+      -webkit-backface-visibility: hidden !important;
+      backface-visibility: hidden !important;
+    }
+    
+    .canvas {
+      -webkit-mask-image: -webkit-radial-gradient(white, black) !important;
+      mask-image: radial-gradient(white, black) !important;
+    }
+  }
+  
+  /* ===== NOTCHED PHONES ===== */
+  @supports (padding: env(safe-area-inset-top)) {
+    .gameContainer {
+      padding-left: max(4px, env(safe-area-inset-left)) !important;
+      padding-right: max(4px, env(safe-area-inset-right)) !important;
+      padding-top: max(4px, env(safe-area-inset-top)) !important;
+      padding-bottom: max(4px, env(safe-area-inset-bottom)) !important;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* DIRECT FIXED WIDTH FIX - CANVAS SAME, OTHER ELEMENTS 5% SMALLER */
+  @media screen and  (max-width: 767px) {
+    /* Main game content container */
+    .gameContent {
+      width: 380px !important;
+      max-width: 380px !important;
+      min-width: 380px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding: 15px !important;
+      box-sizing: border-box !important;
+    }
+    .innerContainer {
+      padding: 1rem !important;
+      background: none !important;
+    }
+    /* Canvas container - KEEP ORIGINAL WIDTH */
+    .canvasContainer {
+      width: 350px !important;
+      max-width: 350px !important;
+      min-width: 350px !important;
+      height: auto !important;
+      aspect-ratio: 1/1 !important;
+      margin: 0 auto 15px auto !important;
+    }
+    
+    /* Controls panel - 5% SMALLER than canvas */
+    .controlsPanel {
+      width: 332px !important; /* 350px - 5% = 332.5px */
+      max-width: 332px !important;
+      min-width: 332px !important;
+      padding: 15px !important;
+      margin: 0 auto !important;
+    }
+    
+    /* Input and button - fill their container */
+    .inputGroup, .inputWrapper, .input, .button {
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    
+    /* Result values - 5% smaller but still wide enough */
+    .resultValue {
+      min-width: 133px !important; /* 140px - 5% = 133px */
+    }
+    
+    /* Results container - match size */
+    .resultsContainer, .lastMultipliersContainer {
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+  
+    
+  }
+  
+  /* iPhone-specific fix */
+  @media screen and (min-width: 390px) and (max-width: 428px) {
+    .gameContent {
+      width: 400px !important;
+      max-width: 400px !important;
+      min-width: 400px !important;
+    }
+    
+    .canvasContainer {
+      width: 370px !important;
+      max-width: 370px !important;
+      min-width: 370px !important;
+    }
+    
+    .controlsPanel {
+      width: 351px !important; /* 370px - 5% = 351.5px */
+      max-width: 351px !important;
+      min-width: 351px !important;
+    }
+  }
+  
+  /* Smaller phones fix */
+  @media screen and (max-width: 375px) {
+    .gameContent {
+      width: 350px !important;
+      max-width: 350px !important;
+      min-width: 350px !important;
+    }
+    
+    .canvasContainer {
+      width: 320px !important;
+      max-width: 320px !important;
+      min-width: 320px !important;
+    }
+    
+    .controlsPanel {
+      width: 304px !important; /* 320px - 5% = 304px */
+      max-width: 304px !important;
+      min-width: 304px !important;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    /* Fix the container being pointed to by blue arrow */
+    .gameContent {
+      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;
+      border-bottom: none !important;
+      overflow: hidden !important; /* Hide any overflowing content */
+    }
+    
+    /* Make last container flush with bottom */
+    .lastMultipliersContainer {
+      margin-bottom: 0 !important;
+      border-bottom: none !important;
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+      padding-bottom: 1.5rem !important; /* Add extra padding at bottom */
+    }
+    
+    /* Extend the background color to fill any gaps */
+    .gameContent:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -20px; /* Extend below any gap */
+      left: 0;
+      width: 100%;
+      height: 40px; /* Tall enough to cover the gap */
+      background: rgba(17, 24, 39, 0.95);
+      z-index: -1;
+    }
+    
+    /* Match page background color to container */
+    body, html {
+      background-color: rgba(17, 24, 39, 0.95) !important;
+    }
+    
+    /* Fix parent containers to prevent gaps */
+    .gameContainer, .innerContainer {
+      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;
+    }
+    .innerContainer {
+      padding: 1rem !important;
+      background: transparent !important;
+    }
+    
+  }
+
+
+
+
+
+
+
+
+  /* Demo Message Banner */
+.demoMessage {
+  background: rgba(46, 213, 115, 0.15);
+  color: #2ED573;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.4;
+  border: 1px solid rgba(46, 213, 115, 0.3);
+  box-shadow: 0 0 15px rgba(46, 213, 115, 0.1);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.demoMessage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(46, 213, 115, 0.1),
+    transparent
+  );
+  animation: shine 4s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(46, 213, 115, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(46, 213, 115, 0.2);
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  20%, 100% {
+    left: 100%;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 991px) {
+  .demoMessage {
+    padding: 0.65rem 0.9rem;
+    font-size: 0.95rem;
+    border-radius: 7px;
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .demoMessage {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .demoMessage {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.85rem;
+    border-radius: 5px;
+    width:80%;
+    
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    align-self: center;
+    margin-bottom: 0.85rem;
+  }
+}
+
+/* Narrow devices like Galaxy Z Fold */
+@media screen and (max-width: 400px) {
+  .demoMessage {
+    padding: 0.45rem 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+    width:80%;
+    
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    align-self: center;
+  }
+}
+
+/* Extra narrow devices */
+@media screen and (max-width: 350px) {
+  .demoMessage {
+    padding: 0.4rem 0.35rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 0.65rem;
+    animation: none; 
+    width:80%;
+
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    align-self: center;
+  }
+  
+  .demoMessage::before {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Error Message Styling with Z-Axis Positioning */
+.errorMessage {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -60px; /* Position below the container */
+  background: rgba(220, 38, 38, 0.9);
+  color: white;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 9999; /* Ensure it stays on top */
+  width: auto;
+  max-width: 90%;
+  animation: slideUp 0.3s ease-out forwards;
+  border-left: 4px solid #991b1b;
+  pointer-events: none; /* Allows clicking through */
+}
+
+/* Add a subtle icon before the text */
+.errorMessage::before {
+  content: '⚠️ ';
+  margin-right: 5px;
+}
+
+/* Animation for the error message appearing */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Make sure the parent container has position relative */
+.controlsPanel, 
+.sidePanel {
+  position: relative;
+  overflow: visible !important; /* Ensure error message can overflow */
+}
+
+/* For multiple error messages */
+.errorMessage:nth-of-type(2) {
+  bottom: -110px; /* Position the second error message below the first one */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1600px) {
+  .errorMessage {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    bottom: 40px;
+  }
+  
+  .errorMessage:nth-of-type(2) {
+    bottom: -100px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .errorMessage {
+    font-size: 0.8rem;
+    padding: 7px 10px;
+    bottom: 20px;
+    border-left-width: 3px;
+  }
+  
+  .errorMessage:nth-of-type(2) {
+    bottom: -90px;
+  }
+}
+
+/* Narrow devices like Galaxy Z Fold */
+@media screen and (max-width: 400px) {
+  .errorMessage {
+    font-size: 0.75rem;
+    padding: 6px 8px;
+    bottom: 20px;
+    max-width: 95%;
+    border-radius: 6px;
+  }
+  
+  .errorMessage:nth-of-type(2) {
+    bottom: -80px;
+  }
+  
+  .errorMessage::before {
+    margin-right: 3px;
+  }
+}
+
+/* Extra narrow devices */
+@media screen and (max-width: 350px) {
+  .errorMessage {
+    font-size: 0.7rem;
+    padding: 5px 7px;
+    bottom: 20px;
+    border-left-width: 2px;
+    border-radius: 4px;
+    z-index: 9999;
+  }
+  
+  .errorMessage:nth-of-type(2) {
+    bottom: -75px;
+  }
+}
+
+
+
+
+

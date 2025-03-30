@@ -1,0 +1,379 @@
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 1.5rem 2rem;
+  margin: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #1a1a1a;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  min-height: fit-content;
+  position: relative;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.labelGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #999;
+  letter-spacing: 0.02em;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  appearance: textfield;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #16a34a;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
+}
+
+.input:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.input[type="number"]::-webkit-outer-spin-button,
+.input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.tooltipContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltipButton {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #999;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: help;
+  transition: all 0.3s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.tooltipButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.tooltip {
+  visibility: hidden;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.75rem 1rem;
+  background: #222;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+  min-width: 200px;
+  max-width: 300px;
+  white-space: normal;
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #222 transparent transparent transparent;
+}
+
+.tooltipButton:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltipButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
+}
+
+.button {
+  width: 100%;
+  padding: 1rem;
+  background: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.button:hover:not(:disabled) {
+  background: #15803d;
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  background: #1a4731;
+  cursor: not-allowed;
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  z-index: 100;
+}
+
+.spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top-color: #16a34a;
+  animation: spin 1s linear infinite;
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.success {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.lastUpdated {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #666;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 850px) {
+  .container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .title {
+    padding: 1.2rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.2rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+  
+  .tooltip {
+    min-width: 180px;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+    padding: 1rem 1.2rem;
+  }
+  
+  .section {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .form {
+    gap: 1rem;
+  }
+  
+  .formGroup {
+    margin-bottom: 0.75rem;
+    gap: 0.3rem;
+  }
+  
+  .label {
+    font-size: 0.8rem;
+  }
+  
+  .input {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .button {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .tooltipButton {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .tooltip {
+    min-width: 160px;
+    font-size: 0.7rem;
+    padding: 0.6rem 0.8rem;
+    max-width: 220px;
+  }
+  
+  .lastUpdated {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    padding: 0.75rem;
+    margin: 0.4rem;
+  }
+  
+  .title {
+    font-size: 1.1rem;
+    padding: 0.8rem 1rem;
+  }
+  
+  .section {
+    padding: 0.75rem;
+  }
+  
+  .label {
+    font-size: 0.75rem;
+  }
+  
+  .input {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.85rem;
+  }
+  
+  .tooltipButton {
+    width: 16px;
+    height: 16px;
+    font-size: 0.7rem;
+  }
+  
+  .tooltip {
+    min-width: 150px;
+    max-width: 200px;
+    font-size: 0.65rem;
+    padding: 0.5rem 0.7rem;
+  }
+}

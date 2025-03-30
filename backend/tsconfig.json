@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2018",                    // Changed from es2016 for better Node.js compatibility
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,             // Added to support JSON imports
+    "sourceMap": false,                    // Added explicitly to disable source maps in production
+    "removeComments": true                 // Added to reduce output file size
+  },
+  "include": ["src/**/*"],                 // Simplified to just include src
+  "exclude": ["node_modules", "dist"]      // Added exclude
+}

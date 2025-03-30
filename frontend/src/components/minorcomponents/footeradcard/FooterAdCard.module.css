@@ -1,0 +1,182 @@
+.adCard {
+  background: rgba(20, 25, 35, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(46, 213, 115, 0.1);
+  width: 600px;
+  transition: all 0.3s ease;
+  margin: 0 auto; /* Added to center the card */
+}
+
+.adCard:hover {
+  transform: scale(1.05);
+}
+
+.imageContainer {
+  background: rgba(15, 23, 41, 0.3);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.image {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.image:hover {
+  transform: scale(1.05);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 1.5rem;    /* Increased from 1.125rem */
+  font-weight: 500;
+  margin: 0;
+}
+
+.description {
+  color: #a4b0be;
+  font-size: 1.125rem;  /* Increased from 0.875rem */
+  line-height: 1.5;     /* Slightly increased for better readability */
+  overflow-y: auto;     /* Enable vertical scrolling */
+  margin: 0;
+  height: 80px;         /* Fixed height to enable scrolling */
+  /* Hide scrollbars while keeping functionality */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.description::-webkit-scrollbar {
+  display: none;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;  /* Slightly increased from 0.5rem */
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #ffffff;
+  font-size: 1.125rem;  /* Added font size for rating */
+}
+
+.starIcon {
+  color: #FFD700;
+  font-size: 1.25rem;   /* Added specific size for star */
+}
+
+.button {
+  background: rgba(46, 213, 115, 0.1);
+  color: #2ED573;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 1.125rem;  /* Increased from 0.875rem */
+  text-decoration: none;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button:hover {
+  background: rgba(46, 213, 115, 0.2);
+}
+
+/* Mobile styles for screens up to 412px */
+@media screen and (max-width: 2050px) {
+  .adCard {
+    width: calc(100% - 1rem) !important;
+    max-width: 340px !important;
+    padding: 0.5rem !important;
+    margin: 0.25rem auto !important;
+    border-radius: 0.375rem;
+    transform: none !important;
+    border-width: 1px !important;
+   position: relative;
+
+  }
+
+  .imageContainer {
+    height: 80px !important;
+    padding: 0.25rem !important;
+    margin-bottom: 0.375rem !important;
+    border-radius: 0.25rem;
+  }
+
+  .content {
+    gap: 0.25rem !important;
+  }
+
+  .title {
+    font-size: 0.875rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .description {
+    font-size: 0.75rem !important;
+    line-height: 1.2 !important;
+    height: 40px !important; /* Smaller fixed height for mobile */
+    overflow-y: auto !important; /* Ensure scrolling works on mobile */
+    margin: 0 !important;
+    color: rgba(164, 176, 190, 0.8) !important;
+    -webkit-line-clamp: initial !important; /* Remove line clamp to allow scrolling */
+    line-clamp: initial !important; /* Standard property for future compatibility */
+    -ms-overflow-style: none !important; /* Hide scrollbar in IE/Edge */
+    scrollbar-width: none !important; /* Hide scrollbar in Firefox */
+  }
+
+  /* Hide scrollbar in Chrome/Safari/Opera */
+  .description::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .footer {
+    margin-top: 0.25rem !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0.375rem !important;
+  }
+
+  .rating {
+    font-size: 0.75rem !important;
+  }
+
+  .starIcon {
+    font-size: 0.75rem !important;
+  }
+
+  .button {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.5rem !important;
+    border-radius: 0.25rem !important;
+    min-width: auto !important;
+    white-space: nowrap !important;
+  }
+
+  .button span {
+    margin-left: 0.25rem !important;
+  }
+}

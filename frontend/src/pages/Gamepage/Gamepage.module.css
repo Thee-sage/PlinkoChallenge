@@ -1,0 +1,1114 @@
+.pageContainer {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f1729 0%, #1a0f2e 100%);
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 2rem;
+  isolation: isolate;
+  width: 100%;
+  padding: 2rem;
+}
+
+.pageContainer::before {
+  content: '';
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(116, 58, 213, 0.03) 0%,
+    rgba(116, 58, 213, 0.03) 1%,
+    transparent 1%,
+    transparent 2%
+  );
+  animation: backgroundShift 40s linear infinite;
+  z-index: 0;
+}
+
+.headerAds {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 128px;
+  align-self: center;
+  background: rgba(15, 23, 41, 0.3);
+  border-radius: 16px;
+  margin-bottom: 80px;
+  margin-top: 120px;
+  margin-left: 40px;
+}
+
+
+.paga{
+  display: flex;
+  flex: 1;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+ justify-self: center;
+}
+.contentWrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1920px;
+  flex: 1;
+  justify-content: flex-start;
+  align-self: flex-start;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background: rgba(15, 23, 41, 0.2);
+  border-radius: 24px;
+  
+  padding: 2rem;
+  min-width: 0; /* Allows content to shrink if needed */
+}
+
+.rightSidebar {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  flex-direction: column;
+  gap: 128px;
+  background: rgba(15, 23, 41, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 300px;
+  flex-shrink: 0;
+}
+
+
+
+.gameandplinkoinfowrapper {
+  background: linear-gradient(90deg, 
+    rgba(2, 17, 1, 0.1) 90%, 
+    rgba(0, 40, 9, 0.1) 100%
+  );
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+  width: 2000px;
+  border-radius: 32px;
+  display: flex;
+  border: 1px solid rgba(46, 213, 115, 0.15);
+}
+.dividerandentirewrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 64px;
+  flex: 1;
+}
+.formTitle {
+  color: #2ED573;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-start;
+  text-shadow: 0 0 20px rgba(46, 213, 115, 0.3);
+}
+.titleanddivider {
+  flex-direction: column;
+  display: flex;
+  margin-top: 64px;
+  margin-left: 78px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: flex-start;
+}
+.mainContentAds {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  background: rgba(15, 23, 41, 0.2);
+  border-radius: 16px;
+  
+  padding: 40px 0px 20px 0px;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+.mainContentAds1{
+  display: flex;
+  flex: 1;
+align-self: center;
+}
+.innerContainer{
+  display: flex;
+  flex: 1;
+  width: 400px;
+  height: auto;
+}
+
+
+
+.foota {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+}
+
+.footerAds {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: rgba(15, 23, 41, 0.3);
+  border-radius: 16px;
+  margin-top: 2rem;
+  width: fit-content;
+}
+
+
+
+
+
+
+
+
+
+
+
+.divider {
+  position: relative;
+  width: 400px;
+  height: 2px;
+  margin: 0 0 24px 0;
+  background: linear-gradient(
+      to right,
+      #2ED573,
+      #2ED573 25%,
+      rgba(46, 213, 115, 0.5) 50%,
+      rgba(46, 213, 115, 0.1) 100%
+  );
+}
+
+/* Test styles to debug - you can remove these after confirming visibility */
+.dividerContainer {
+  width: 100%;
+  padding: 4px 0;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+.rsb{
+  flex:1;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: row;
+ 
+}
+.whole{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-content: center;
+  justify-content: flex-start;
+  align-self: flex-start;
+}
+.whole1{
+  display: flex;
+  flex-direction: row;
+  flex:1;
+  gap:380px;
+}
+.whole2{
+  display: flex;
+  flex-direction: column;
+  flex:1;
+}
+
+
+
+
+
+.conta {
+  display: flex;
+  flex: 1;
+  margin-top: 100px;
+  align-self: center;
+  margin-left: 0px;
+}
+
+.contentSection {
+  width: 2030px; 
+  margin-left: 2.5rem;
+  padding: 0.5rem;
+}
+
+.contentItem {
+  background: rgba(20, 25, 35, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+  padding: 1.75rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  border: 1px solid rgba(46, 213, 115, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Notebook paper line effect on the left */
+.contentItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(46, 213, 115, 0.1) 0px,
+    rgba(46, 213, 115, 0.1) 1px,
+    transparent 1px,
+    transparent 24px
+  );
+}
+
+.contentText {
+  color: #a4b0be;
+  line-height: 1.8;
+  position: relative;
+  padding-left: 1.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Horizontal lines background */
+.contentText::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 23px,
+    rgba(46, 213, 115, 0.03) 23px,
+    rgba(46, 213, 115, 0.03) 24px
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Left margin line */
+.contentText::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(46, 213, 115, 0.2);
+}
+
+/* Hover effects */
+.contentItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(46, 213, 115, 0.1);
+}
+
+.contentItem:hover .contentText {
+  color: #ffffff;
+}
+
+/* Link styling */
+.contentText a {
+  color: #2ED573;
+  text-decoration: underline;
+  text-decoration-color: rgba(46, 213, 115, 0.4);
+  text-underline-offset: 2px;
+  transition: all 0.2s ease;
+}
+
+.contentText a:hover {
+  color: #7bed9f;
+  text-decoration-color: #7bed9f;
+}
+
+@media (max-width: 768px) {
+  .contentSection {
+    margin: 1.5rem;
+  }
+  
+  .contentItem {
+    padding: 1.25rem;
+  }
+  
+  .contentText {
+    font-size: 0.9rem;
+    padding-left: 1rem;
+  }
+}
+
+@keyframes backgroundShift {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Add horizontal scrolling for very small screens */
+@media (max-width: 1400px) {
+  .pageContainer {
+    overflow-x: auto;
+  }
+  
+  .contentWrapper {
+    min-width: 1200px;
+  }
+}
+
+
+
+
+
+/* Complete Mobile Media Queries with All Fixes */
+@media (max-width: 1800px) {
+  /* Fix overall page structure */
+  .pageContainer {
+    min-width: unset;
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    overflow-y: auto;
+  }
+  
+  .pageContainer::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  
+  /* Center paga container */
+  .paga {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Main container for header ads */
+  .headerAds {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Exact 20px gap between ads */
+    margin: 0 auto;
+    padding: 0;
+    left: 0;
+    transform: none;
+    margin-bottom: 40px;
+    margin-top: 60px;
+    position: relative;
+  }
+  
+  /* Control the width of each ad card in header */
+  .headerAds > * {
+    width: calc(50% - 10px) !important; /* 50% width minus half of the gap */
+    max-width: 160px; /* Limit max width if needed */
+    margin: 0 !important;
+  }
+  
+  /* Center content wrapper */
+  .contentWrapper {
+    min-width: unset;
+    width: 90%;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    align-self: center;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    overflow-x: hidden;
+  }
+  
+  .contentWrapper::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  
+  /* Main content area */
+  .mainContent {
+    width: 100%;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 0;
+    overflow: visible;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    overflow-x: hidden;
+  }
+  
+  .mainContent::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  
+  /* Game and plinko info wrapper */
+  .gameandplinkoinfowrapper {
+    width: 100%;
+    align-items: center;
+    padding: 0.2rem;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    overflow-x: hidden;
+  }
+  
+  .gameandplinkoinfowrapper::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  
+  /* Title and divider */
+  .titleanddivider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  
+  /* Divider container */
+  .dividerContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+
+  
+  /* Adjust the inner container for plinko info */
+  .plinkoinfowrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .dividerandentirewrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .innerContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Bottom content area */
+  .maincontentaaaaa {
+    width: 100%;
+    margin: 0;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: static;
+  }
+  
+  /* Main content ads */
+  .mainContentAds1 {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .mainContentAds {
+    width: 100%;
+  }
+  
+  /* Completely reposition the content container */
+  .conta {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0;
+    position: static;
+    height: auto;
+    display: block;
+  }
+  
+  /* Fix content section sizing and position */
+  .contentSection {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: static;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    overflow-x: hidden;
+  }
+  
+  .contentSection::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  
+  /* Create a proper container for scrollable content */
+  .contentItem {
+    width: 100%;
+    height: 350px; /* Fixed height, adjust as needed */
+    margin: 0 0 1rem 0;
+    padding: 0.75rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    transform: none;
+    transition: all 0.2s ease;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(20, 25, 35, 0.85);
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Fix hover effect to be more subtle */
+  .contentItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 213, 115, 0.08);
+    border-radius: 0.75rem;
+  }
+  
+  /* Fix active/clicked state */
+  .contentItem:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(46, 213, 115, 0.06);
+    border-radius: 0.75rem;
+  }
+  
+  /* Make sure border radius is consistent */
+  .contentItem,
+  .contentItem:hover,
+  .contentItem:active,
+  .contentItem:focus {
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+  
+  /* Ensure shadow doesn't interfere with rounded corners */
+  .contentItem::before {
+    border-radius: 0.75rem;
+  }
+  
+  /* Reset and properly style the text */
+  .contentText {
+    position: relative;
+    padding-left: 0.5rem; /* Reduced padding since there's no vertical line */
+    color: #a4b0be;
+    font-size: 14px;
+    line-height: 24px; /* Exact line height to match the ruled lines */
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: color 0.2s ease;
+  }
+  
+  /* Ensure the text color changes are less dramatic */
+  .contentItem:hover .contentText {
+    color: #d0d8e2; /* Lighter color but not full white */
+  }
+  
+  /* Create perfectly aligned ruled lines */
+  .contentText::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 23px,
+      rgba(46, 213, 115, 0.03) 23px,
+      rgba(46, 213, 115, 0.03) 24px
+    );
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  /* Removed vertical line */
+  .contentText::after {
+    display: none;
+  }
+  
+  /* Ensure paragraphs align with the ruled lines */
+  .contentText p {
+    margin: 0 0 24px 0; /* Match the line height */
+    padding: 0;
+  }
+  
+  /* Custom scrollbar only for the content item */
+  .contentItem::-webkit-scrollbar {
+    width: 4px;
+    display: block !important;
+  }
+  
+  .contentItem::-webkit-scrollbar-track {
+    background: rgba(20, 25, 35, 0.5);
+  }
+  
+  .contentItem::-webkit-scrollbar-thumb {
+    background: rgba(46, 213, 115, 0.3);
+    border-radius: 2px;
+  }
+  
+  /* Firefox scrollbar for content item */
+  .contentItem {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(46, 213, 115, 0.3) rgba(20, 25, 35, 0.5);
+  }
+  
+  /* Footer */
+  .foota {
+    width: 90%;
+    margin-top: -70px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footerAds {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Fix whole structure centering */
+  .whole, .whole1, .whole2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Remove any fixed margins that might be causing alignment issues */
+  .whole, .whole1, .whole2, .contentWrapper, .mainContent, 
+  .gameandplinkoinfowrapper, .dividerandentirewrapper,
+  .maincontentaaaaa, .conta, .contentSection, .foota {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /* Ensure content doesn't overflow horizontally */
+  body, html {
+    overflow-x: hidden;
+    max-width: 100%;
+    position: relative;
+  }
+  
+  /* Hide scrollbar for all elements on mobile except .contentItem */
+  * {
+    -ms-overflow-style: none !important;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none !important;     /* Hide scrollbar for Firefox */
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+}
+
+/* Fix overflow issues at slightly larger screens */
+@media (min-width: 801px) and (max-width: 1499px) {
+  .pageContainer {
+    min-width: unset;
+    padding: 1rem;
+    overflow-x: hidden;
+  }
+  
+  .contentWrapper {
+    min-width: unset;
+    width: 100%;
+  }
+  
+  /* Center the game wrapper */
+  .gameandplinkoinfowrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .contentSection {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Content item hover effects for tablet */
+  .contentItem {
+    height: 400px; /* Slightly taller on tablets */
+    overflow-y: auto;
+    transition: all 0.2s ease;
+  }
+  
+  .contentItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 213, 115, 0.08);
+    border-radius: 0.75rem;
+  }
+  
+  .contentItem:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(46, 213, 115, 0.06);
+  }
+  
+  /* Show scrollbar on tablet too */
+  .contentItem::-webkit-scrollbar {
+    width: 6px;
+    display: block !important;
+  }
+}
+/* Fix for content item scrolling */
+@media (max-width: 1600px) {
+  /* Override the general scrollbar hiding for contentItem specifically */
+  .contentItem {
+    -ms-overflow-style: auto !important; /* Allow scrollbar for IE and Edge */
+    scrollbar-width: thin !important;    /* Allow thin scrollbar for Firefox */
+    overflow-y: auto !important;         /* Ensure vertical scrolling works */
+    overflow-x: hidden !important;       /* Prevent horizontal scrolling */
+  }
+  
+  /* Re-enable the scrollbar for content item in webkit browsers */
+  .contentItem::-webkit-scrollbar {
+    display: block !important;
+    width: 4px !important;
+    height: auto !important;
+  }
+  
+  /* Make sure the content remains scrollable */
+  .contentText {
+    overflow: visible;
+    position: relative;
+  }
+  
+  /* Override the general * selector that hides all scrollbars */
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  /* But make exception for the content item */
+  .contentItem {
+    scrollbar-width: thin !important;
+    -ms-overflow-style: auto !important;
+  }
+  
+  /* Make sure the parent containers aren't restricting the scrolling */
+  .conta, .contentSection, .maincontentaaaaa {
+    overflow: visible !important;
+  }
+  
+  /* Ensure the scrollbar works by forcing overflow behavior */
+  html .contentItem {
+    overflow-y: scroll !important;
+  }
+}
+
+
+
+
+
+/* Enhanced Title and Left-Thick Divider Styles */
+
+/* Title styling - keeping original positioning */
+.formTitle {
+  color: #2ED573;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-start;
+  text-shadow: 0 0 20px rgba(46, 213, 115, 0.3);
+}
+
+/* Title container - keeping original positioning */
+.titleanddivider {
+  flex-direction: column;
+  display: flex;
+  margin-top: 64px;
+  margin-left: 78px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: flex-start;
+}
+
+/* Divider container */
+.dividerContainer {
+  width: 100%;
+  padding: 4px 0;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Enhanced divider with thickness gradient from left to right */
+.divider {
+  position: relative;
+  width: 400px;
+  height: 3px; /* Starting height */
+  margin: 0;
+  background: linear-gradient(
+    to right,
+    #2ED573,
+    #2ED573 25%,
+    rgba(46, 213, 115, 0.5) 50%,
+    rgba(46, 213, 115, 0.1) 100%
+  );
+  /* Create thickness gradient using clip-path */
+  clip-path: polygon(
+    0 0, /* Top left - full height */
+    100% 0, /* Top right - full height */
+    100% 70%, /* Bottom right - reduced height */
+    0 100% /* Bottom left - full height */
+  );
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .formTitle {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .divider {
+    width: 300px;
+  }
+  
+  .titleanddivider {
+    margin-top: 32px;
+    margin-left: 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .formTitle {
+    font-size: 16px;
+  }
+  
+  .divider {
+    width: 250px;
+  }
+  
+  .titleanddivider {
+    margin-top: 24px;
+    margin-left: 16px;
+  }
+}
+
+
+
+
+
+
+/* Content-Only Media Queries - No interference with other styles */
+
+/* Larger screens (2000px - 2200px) */
+@media screen and (max-width: 2200px) and (min-width: 2001px) {
+  /* Target only content area */
+  .conta {
+    width: auto;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+  }
+  .dividerandentirewrapper{
+    gap:12px;
+  }
+  .contentSection {
+    width: 100%;
+    max-width: 1800px;
+    margin-left: 0;
+    padding: 0 1.5rem;
+  }
+  .contentWrapper{
+padding: none;
+  }
+  .gameandplinkoinfowrapper{
+    padding: none;
+    max-width: 1900px;
+  }
+  .mainContent{
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+  }
+  
+  /* Ensure paragraphs don't overflow */
+  .contentText p {
+    max-width: 100%;
+  }
+}
+
+/* Large screens (1800px - 2000px) */
+@media screen and (max-width: 2000px) and (min-width: 1801px) {
+  .conta {
+    width: auto;
+    max-width: 1600px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contentSection {
+    width: 100%;
+    max-width: 1600px;
+    margin-left: 0;
+  }
+  .contentWrapper{
+    padding: none;
+      }
+      .gameandplinkoinfowrapper{
+        padding: none;
+        max-width: 1700px;
+      }
+      .mainContent{
+        margin-left: auto;
+        margin-right: auto;
+        align-self: center;
+      }
+}
+
+/* Medium-large screens (1600px - 1800px) */
+@media screen and (max-width: 1800px) and (min-width: 1601px) {
+  .conta {
+    width: auto;
+    max-width: 1400px;
+  }
+  
+  .contentSection {
+    width: 100%;
+    max-width: 1400px;
+    margin-left: 0;
+  }
+}
+
+/* Medium screens (1400px - 1600px) */
+@media screen and (max-width: 1600px) and (min-width: 1401px) {
+  .conta {
+    width: auto;
+    max-width: 1200px;
+  }
+  
+  .contentSection {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: 0;
+  }
+}
+
+/* Medium-small screens (1200px - 1400px) */
+@media screen and (max-width: 1400px) and (min-width: 1201px) {
+  .conta {
+    width: auto;
+    max-width: 1000px;
+  }
+  
+  .contentSection {
+    width: 100%;
+    max-width: 1000px;
+    margin-left: 0;
+  }
+}
+
+/* Small desktop screens (1024px - 1200px) */
+@media screen and (max-width: 1200px) and (min-width: 1025px) {
+  .conta {
+    width: auto;
+    max-width: 900px;
+  }
+  
+  .contentSection {
+    width: 100%;
+    max-width: 900px;
+    margin-left: 0;
+    padding: 0 1rem;
+  }
+}
+
+/* iPad Pro and similar (1024px width) */
+@media screen and (width: 1024px) {
+  .conta {
+    width: auto;
+    max-width: 900px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .contentSection {
+    width: 100%;
+    max-width: 900px;
+    margin-left: 0;
+    padding: 0 0.5rem;
+  }
+  
+  .contentItem {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+}
+
+/* Ensure content items don't overflow on any screen */
+.contentItem {
+  box-sizing: border-box;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contentText {
+  max-width: 100%;
+}
+
+.contentText p {
+  max-width: 100%;
+}
+
+
+
+
+
+
+
+
+

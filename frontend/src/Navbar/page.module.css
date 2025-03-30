@@ -1,0 +1,1498 @@
+/* Theme variables remain unchanged */
+:root[data-theme="light"] {
+  --bg-primary: linear-gradient(135deg, #0f1729 0%, #1a0f2e 100%);
+  --bg-secondary: linear-gradient(to right,
+    rgba(24, 31, 64, 0.97),
+    rgba(17, 14, 51, 0.97)
+  );
+  --text-primary: #ffffff;
+  --text-secondary: #EDF0FF;
+  --accent-primary: linear-gradient(to right, #ffffff, #6354E4);
+  --accent-secondary: #8B7DFF;
+  --border-color: rgba(123, 106, 255, 0.3);
+  --shadow-color: rgba(123, 106, 255, 0.25);
+  --modal-bg: linear-gradient(
+    to bottom right,
+    rgba(59, 79, 167, 0.98),
+    rgba(75, 68, 169, 0.98)
+  );
+  --svg-fill: #8B7DFF;
+  --hamburger-fill: #FFFFFF;
+  --input-bg: rgba(255, 255, 255, 0.12);
+  --input-text: #FFFFFF;
+  --input-border: rgba(123, 106, 255, 0.35);
+  --error-color: #ef4444;
+  --error-bg: rgba(239, 68, 68, 0.1);
+}
+
+:root[data-theme="dark"] {
+  --bg-primary: linear-gradient(135deg, #0f1729 0%, #1a0f2e 100%);
+  --bg-secondary: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(26, 15, 46, 0.95));
+  --text-primary: #e5e7eb;
+  --text-secondary: #d1d5db;
+  --accent-primary: linear-gradient(to right, #9639ed, #eceaef);
+  --accent-secondary: #a78bfa;
+  --border-color: rgba(138, 43, 226, 0.3);
+  --shadow-color: rgba(124, 58, 237, 0.2);
+  --modal-bg: rgba(15, 23, 42, 0.98);
+  --svg-fill: #a78bfa;
+  --hamburger-fill: #e5e7eb;
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-text: #ffffff;
+  --input-border: rgba(138, 43, 226, 0.3);
+  --error-color: #ef4444;
+  --error-bg: rgba(239, 68, 68, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+.mainclass {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  background: var(--bg-secondary);
+  box-shadow: 0 0 20px var(--shadow-color);
+  border-bottom: 2px solid var(--border-color);
+  backdrop-filter: blur(8px);
+  z-index: 40;
+  height: 64px;
+}
+
+.logo {
+  width: 128px;
+  height: 128px;
+  margin-top:10px;
+  filter: drop-shadow(0 0 10px var(--shadow-color));
+  transition: transform 0.3s ease;
+
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.wallet {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex: 1;
+  justify-content: center;
+  margin: 0 2rem;
+}
+
+.balance {
+  color: var(--text-primary);
+  font-weight: 500;
+  text-shadow: 0 0 10px var(--shadow-color);
+  background: var(--accent-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+}
+
+.themeToggle {
+  background: var(--accent-primary);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  height: 40px;
+  width: 40px;
+}
+
+.themeToggle:focus{
+  outline: none;
+}
+.themeToggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--shadow-color);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  z-index: 101;
+}
+
+.buttonOne {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+  height: 40px;
+  -webkit-tap-highlight-color: transparent;
+  align-items: center;
+  padding: 0;
+  margin-left: 1rem;
+}
+.buttonOne:focus {
+  outline: none; /* Remove default focus outline */
+}
+
+.hamburger {
+  fill: var(--hamburger-fill);
+  width: 40px;
+  height: 40px;
+}
+
+
+  .line {
+    fill: var(--svg-fill);
+    transition: transform 0.3s ease, opacity 0.7s ease;
+    transform-origin: center;
+  }
+  .buttonOne[aria-expanded="true"] .top {
+    transform: translateY(20px) rotate(45deg);
+  }
+  
+  .buttonOne[aria-expanded="true"] .bottom {
+    transform: translateY(-20px) rotate(-45deg);
+  }
+  
+  .buttonOne[aria-expanded="true"] .middle {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+.top, .bottom {
+  width: 80px;
+  transform: translateY(0) rotate(0);
+  height: 10px;
+}
+
+.middle {
+  width: 50px;
+  opacity: 1;
+  height: 10px;
+  transform: scale(1);
+}
+
+
+
+
+
+
+/* BurgerMenu.module.css */
+
+.burgerMenuContent2 {
+  position: fixed;
+  top: 90px;
+  right: 30px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: fit-content;
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  transition: background 0.3s ease-in-out,
+  box-shadow 0.3s ease-in-out,
+  border-color 0.3s ease-in-out,
+  backdrop-filter 0.3s ease-in-out;
+
+}
+.signn{
+ background: var(--modal-bg);
+ display: flex;
+ flex-direction: column;
+ overflow: hidden;
+}
+/* For logged out users */
+.burgerMenuContent {
+  width: 300px;
+  /* Remove fixed max-height to allow content to determine height */
+  height: auto;
+  max-height: 300vh; /* Maximum height of 90% viewport height */
+  overflow-y: auto; /* Add scroll if content exceeds max-height */
+}
+
+/* For logged in users - burgerMenuContent1 */
+.burgerMenuContent1 {
+  width: 600px;
+  height: fit-content;
+  min-height: unset; /* Remove min-height */
+
+  max-height: unset; /* Remove max-height */
+  overflow-y: visible; /* Change from auto to visible */
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Reduced from 100px to a more reasonable spacing */
+  height: 100%;
+  justify-content: space-between; /* This will push the logout button to bottom */
+}
+
+.accountManagementWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 40px;
+  flex: 1; /* This allows it to grow and take available space */
+}
+
+/* Add specific styles for the form container inside AccountManagement */
+.accountManagementWrapper > div {
+  width: 100%;
+  height: auto;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  
+  border-radius: 40px;
+  height: 100%; /* Fill available space */
+  min-height: fit-content; /* Adapt to content */
+}
+
+.menuContainer > *:not(.accountManagementWrapper) {
+  /* Styles only apply to direct children that are not the account management wrapper */
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.menuLink {
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.menuLink:hover {
+  color: var(--text-secondary);
+  background: rgba(124, 58, 237, 0.2);
+  transform: translateX(5px);
+}
+
+
+
+
+
+
+
+
+
+
+.requestContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.lockedFeatureContainer {
+  position: relative;
+  cursor: not-allowed;
+}
+
+.lockedFeatureOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 9999px;
+  z-index: 2;
+}
+
+.lockedFeatureContent {
+  opacity: 0.6;
+  filter: grayscale(0.8);
+  pointer-events: none;
+}
+
+.requestButton {
+  padding: 0.5rem 1.25rem;
+  border: none;
+  background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 9999px;
+  box-shadow: 0 0 15px var(--shadow-color);
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.requestButton:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.requestButton:not(:disabled):active {
+  transform: translateY(1px);
+}
+
+.requestButton:disabled {
+  cursor: not-allowed;
+  background: #e2e8f0;
+  color: #94a3b8;
+  box-shadow: none;
+}
+
+.but {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.but1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mand {
+  display: flex;
+  align-items: center;
+}
+
+.requestForm {
+  position: fixed;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--modal-bg);
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  z-index: 1001;
+  display: none;
+  box-shadow: 0 0 50px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(12px);
+}
+
+.requestForm.show {
+  display: block;
+}
+
+.formTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  background: var(--accent-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.5rem;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  color: var(--input-text);
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 0 2px var(--shadow-color);
+}
+
+.message {
+  margin: 0.5rem 0;
+  color: var(--text-primary);
+}
+
+.submitButton,
+.closeButton,
+.logoutButton {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.submitButton {
+  background: var(--accent-primary);
+  color: white;
+  box-shadow: 0 0 20px var(--shadow-color);
+}
+
+.closeButton {
+  background: var(--error-bg);
+  color: var(--error-color);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+
+
+.submitButton:hover,
+.logoutButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px var(--shadow-color);
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: none;
+}
+
+.backdrop.show {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mainclass {
+    padding: 0.75rem 1rem;
+  }
+
+  .wallet {
+    margin: 0 1rem;
+  }
+
+  .balance {
+    font-size: 0.875rem;
+  }
+
+  .requestButton {
+    padding: 0.5rem 1rem;
+  }
+
+  .burgerMenuContent {
+    width: calc(100vw - 2rem);
+    right: 1rem;
+  }
+}
+
+
+
+
+
+
+.requestContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.requestButton {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 9999px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.requestButton:focus{
+  outline: none;
+}
+
+.requestButton:not(:disabled)::before {
+  content: '';
+  position: absolute;
+  top: 200px;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  transform: scale(0);
+  transition: transform 0.6s ease-out;
+}
+
+.requestButton:not(:disabled):hover::before {
+  transform: scale(1);
+}
+
+.requestButton:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+.requestButton:disabled {
+  cursor: not-allowed;
+  background: rgba(74, 222, 128, 0.1);
+  color: rgba(74, 222, 128, 0.5);
+  box-shadow: none;
+}
+
+.requestForm {
+  position: fixed;
+  top: 300px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(17, 24, 39, 0.95);
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  z-index: 1001;
+  display: none;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(74, 222, 128, 0.1);
+  backdrop-filter: blur(12px);
+  animation: formSlideIn 0.3s ease;
+}
+
+.requestForm.show {
+  display: block;
+}
+
+.formTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #4ade80;
+  text-align: center;
+}
+
+.loginRequired {
+  text-align: center;
+  padding: 2rem;
+}
+
+.loginMessage {
+  color: #e5e7eb;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.loginButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.loginButton, 
+.signupButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+}
+
+.loginButton {
+  background: #4ade80;
+  color: #0f172a;
+  border: none;
+  outline: none;
+}
+
+.signupButton {
+  background: transparent;
+  color: #4ade80;
+  outline: none;
+  border: 1px solid #4ade80;
+}
+
+.loginButton:hover,
+.signupButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.2);
+}
+.loginButton:focus,
+.signupButton:focus {
+  outline: none;
+}
+.formInput {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #4ade80;
+  box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.1);
+}
+
+.submitButton {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  outline: none;
+}
+.submitButton:focus{
+  outline: none;
+}
+.closeButton {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  outline: none;
+}
+.closeButton:focus{
+  outline: none;
+}
+@keyframes formSlideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Mobile-first media queries consolidating ALL styles */
+@media screen and (max-width: 790px) {
+  /* Navbar and main layout */
+  .mainclass {
+    padding: 0 0.75rem;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    overflow: hidden;
+  }
+
+  /* Logo styling */
+  .logo {
+    width: 64px;
+    height: 28px;
+    margin: 0;
+    object-fit: contain;
+  }
+
+  .logo1 {
+    margin-top: 8px;
+  }
+
+  /* Wallet section */
+  .wallet {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    gap: 20px;
+    flex: 1;
+    justify-content: center;
+    transform: scale(0.7);
+    transform-origin: center;
+    white-space: nowrap;
+    min-width: max-content;
+  }
+
+  .balance {
+    font-size: 0.65rem;
+    white-space: nowrap;
+    opacity: 0.9;
+  }
+
+  /* Request button */
+  .requestButton {
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+    box-shadow: 0 0 10px var(--shadow-color);
+    padding: 0 12px;
+    font-size: 0.65rem;
+    height: 24px;
+    min-height: 24px;
+    white-space: nowrap;
+    opacity: 0.9;
+    border: none;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .requestButton:active {
+    transform: scale(0.95);
+  }
+
+  /* Right section */
+  .but {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    transform: scale(0.8);
+    transform-origin: right center;
+  }
+
+  .but1 {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* Theme toggle */
+  .themeToggle {
+    height: 24px;
+    width: 24px;
+    padding: 4px;
+    min-width: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-primary);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .themeToggle svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .themeToggle:active {
+    transform: scale(0.95);
+  }
+
+  /* Hamburger menu */
+  .buttonOne {
+    height: 24px;
+    width: 24px;
+    margin-left: 0;
+    min-width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .hamburger {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Burger menu content */
+  .burgerMenuContent2 {
+    top: 42px;
+    right: 0;
+    width: 100%;
+  }
+
+  .burgerMenuContent {
+    width: calc(100vw - 2rem);
+    right: 1rem;
+    height: auto;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .burgerMenuContent1 {
+    width: 100%;
+    height: fit-content;
+    min-height: unset;
+    max-height: unset;
+    overflow-y: visible;
+  }
+
+  /* Account management wrapper */
+  .accountManagementWrapper {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .menuContainer {
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  /* Request form and modal */
+  .requestForm {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 280px !important;
+    height: auto !important;
+    background: var(--modal-bg) !important;
+    padding: 16px !important;
+    border-radius: 8px !important;
+    margin: 0 !important;
+    z-index: 99999 !important;
+  }
+
+  .requestForm.show {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .backdrop {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    backdrop-filter: blur(4px) !important;
+    z-index: 99998 !important;
+  }
+
+  .backdrop.show {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Form elements */
+  .formInput {
+    width: 100% !important;
+    padding: 0.75rem !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .formTitle {
+    font-size: 14px !important;
+    margin-bottom: 12px !important;
+    text-align: center !important;
+  }
+
+  .loginMessage {
+    font-size: 13px !important;
+    margin: 8px 0 !important;
+    text-align: center !important;
+  }
+
+  .loginRequired {
+    text-align: center !important;
+    padding: 12px !important;
+  }
+
+  .loginButtons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .loginButton,
+  .signupButton {
+    width: 100% !important;
+    height: 32px !important;
+    border-radius: 999px !important;
+    font-size: 13px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .closeButton {
+    width: 100% !important;
+    height: 32px !important;
+    border-radius: 8px !important;
+    font-size: 13px !important;
+    margin-top: 8px !important;
+  }
+
+  /* Improved tap targets */
+  .requestButton::after,
+  .themeToggle::after,
+  .buttonOne::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
+    border-radius: inherit;
+  }
+
+  /* Animation keyframes */
+  @keyframes formSlideIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -40%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+/* Small mobile screens */
+@media screen and (max-width: 400px) {
+  .mainclass {
+    padding: 0 0.5rem;
+  }
+
+  .wallet {
+    transform: scale(0.65);
+  }
+
+  .requestForm {
+    width: 90% !important;
+    max-width: 280px !important;
+  }
+}
+
+/* Very small screens */
+@media screen and (max-width: 320px) {
+  .mainclass {
+    padding: 0 0.5rem;
+  }
+  
+  .wallet {
+    transform: scale(0.6);
+  }
+
+  .formTitle {
+    font-size: 13px !important;
+  }
+
+  .loginMessage {
+    font-size: 12px !important;
+  }
+
+  .loginButton,
+  .signupButton,
+  .closeButton {
+    height: 30px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Handle landscape orientation */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .requestForm {
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+  }
+
+  .burgerMenuContent {
+    max-height: 80vh;
+  }
+}
+
+/* Medium screens */
+@media screen and (min-width: 791px) and (max-width: 1024px) {
+  .mainclass {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .wallet {
+    margin: 0 1.5rem;
+  }
+
+  .burgerMenuContent {
+    width: 320px;
+    right: 1.5rem;
+  }
+}
+/* Keep all existing styles but add these specific fixes */
+@media screen and (max-width: 790px) {
+  /* Fix burger menu dropdown */
+  .burgerMenuContent2 {
+    position: fixed;
+    top: 42px;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 42px);
+    background: var(--modal-bg);
+    z-index: 2147483647;
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .signn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  /* Fix request form modal */
+  .requestForm {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 90% !important;
+    max-width: 320px !important;
+    z-index: 2147483646 !important;
+  }
+
+  .backdrop {
+    z-index: 2147483645 !important;
+  }
+
+  /* Ensure mainclass stays below dropdowns */
+  .mainclass {
+    z-index: 2147483644 !important;
+  }
+}
+
+/* Additional tweak for very narrow screens */
+@media screen and (max-width: 480px) {
+  .burgerMenuContent2 {
+    top: 42px;
+  }
+}
+
+
+
+
+
+
+
+/* Add these styles at the end of your CSS file */
+
+/* Z-index hierarchy */
+:root {
+  --z-base: 10;
+  --z-navbar: 40;
+  --z-backdrop: 45;
+  --z-popup: 50;
+  --z-modal: 100;
+}
+
+/* Ensure mainclass stays at proper z-index */
+.mainclass {
+  z-index: var(--z-navbar) !important;
+  position: fixed !important;
+  width: 100% !important;
+}
+
+/* Fix for backdrop */
+.backdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: var(--z-backdrop) !important;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(4px) !important;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
+}
+
+.backdrop.show {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* Request form fixes */
+.requestForm {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: var(--z-modal) !important;
+  width: 90% !important;
+  max-width: 400px !important;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+}
+
+.requestForm.show {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* Burger menu content fixes */
+.burgerMenuContent2 {
+  position: fixed !important;
+  top: 64px !important;
+  right: 0 !important;
+  z-index: var(--z-popup) !important;
+  max-height: calc(100vh - 64px) !important;
+  overflow-y: auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+  animation: slideInMenu 0.3s ease-in-out;
+}
+
+.burgerMenuInner {
+  width: 100%;
+  height: 100%;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+@keyframes slideInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* For preventing body scroll when modal is open */
+body.modal-open,
+body.menu-open {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+/* Menu backdrop */
+.menuBackdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: calc(var(--z-popup) - 1) !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(2px) !important;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
+}
+
+.menuBackdrop.show {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* Mobile specific fixes */
+@media screen and (max-width: 790px) {
+  .burgerMenuContent2 {
+    top: 42px !important; /* Match your mobile navbar height */
+    max-height: calc(100vh - 42px) !important;
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    border-radius: 0 !important;
+  }
+  
+  .burgerMenuContent,
+  .burgerMenuContent1 {
+    width: 100% !important;
+    border-radius: 0 !important;
+  }
+  
+  .burgerMenuInner {
+    border-radius: 0 !important;
+    padding: 16px !important;
+  }
+  
+  .signn {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 16px !important;
+    background: var(--modal-bg) !important;
+  }
+  
+  .accountManagementWrapper {
+    width: 100% !important;
+    border-radius: 0 !important;
+    background: var(--modal-bg) !important;
+  }
+  
+  .menuLink {
+    font-size: 16px !important;
+    padding: 12px !important;
+    display: block !important;
+    text-align: center !important;
+    border-radius: 8px !important;
+  }
+  
+  .requestForm {
+    max-width: 320px !important;
+    padding: 16px !important;
+  }
+}
+
+/* Very small screens adjustments */
+@media screen and (max-width: 375px) {
+  .requestForm {
+    max-width: 280px !important;
+    padding: 12px !important;
+  }
+  
+  .formTitle {
+    font-size: 16px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .formInput,
+  .submitButton
+   {
+    padding: 8px !important;
+    font-size: 14px !important;
+  }
+  .closeButton{
+    align-self: center;
+    align-items: center;
+    padding-bottom: 4px;
+  }
+
+}
+
+/* Fix for iOS Safari issues with fixed positioning */
+@supports (-webkit-touch-callout: none) {
+  .backdrop,
+  .requestForm,
+  .burgerMenuContent2 {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+/* Add these styles to fix the close button alignment */
+
+.closeButton {
+  width: 100% !important;
+  padding: 1rem !important;
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: #ef4444 !important;
+  border: 1px solid rgba(239, 68, 68, 0.2) !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  margin-top: 1rem !important;
+  outline: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.closeButton1 {
+  display: inline-block !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+/* Small screen adjustments */
+@media screen and (max-width: 790px) {
+  .closeButton {
+    height: 40px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .closeButton1 {
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Extra Small Screen Fixes - Add to end of your CSS file */
+
+/* General improvements for very small screens */
+@media screen and (max-width: 400px) {
+  /* Improve navbar layout */
+  .mainclass {
+    padding: 0 0.25rem !important;
+    height: 42px !important;
+    gap: 2px !important;
+  }
+  
+  /* Better wallet section scaling */
+  .wallet {
+    transform: scale(0.55) !important;
+    transform-origin: center !important;
+    margin: 0 !important;
+    gap: 10px !important;
+    min-width: max-content !important;
+  }
+
+  /* Make logo smaller */
+  .logo {
+    width: 48px !important;
+    height: 24px !important;
+  }
+  
+  /* Reduce padding on buttons */
+  .requestButton {
+    padding: 0 8px !important;
+    font-size: 0.6rem !important;
+    height: 20px !important;
+    min-width: 80px !important;
+  }
+  
+  /* Modal/Form improvements */
+  .requestForm {
+    width: 90% !important;
+    max-width: 260px !important;
+    padding: 12px !important;
+  }
+  
+  .formTitle {
+    font-size: 14px !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .formInput {
+    padding: 0.6rem !important;
+    font-size: 13px !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .submitButton {
+    height: 36px !important;
+    padding: 0 !important;
+    font-size: 13px !important;
+  }
+  
+  .closeButton {
+    height: 36px !important;
+    padding: 0 !important;
+    font-size: 13px !important;
+  }
+  
+  /* Menu improvements */
+  .menuLink {
+    font-size: 14px !important;
+    padding: 10px !important;
+  }
+  
+  /* Theme and burger button */
+  .but {
+    transform: scale(0.7) !important;
+  }
+  
+  .themeToggle, .buttonOne {
+    height: 22px !important;
+    width: 22px !important;
+    min-width: 22px !important;
+  }
+}
+
+/* Ultra-small screen emergency fixes */
+@media screen and (max-width: 320px) {
+  .wallet {
+    transform: scale(0.5) !important;
+    gap: 5px !important;
+  }
+  
+  .balance {
+    font-size: 0.55rem !important;
+  }
+  
+  .requestButton {
+    min-width: 70px !important;
+    padding: 0 6px !important;
+    font-size: 0.55rem !important;
+    height: 18px !important;
+  }
+  
+  .requestForm {
+    max-width: 240px !important;
+    padding: 10px !important;
+  }
+  
+  .but {
+    transform: scale(0.6) !important;
+  }
+  
+  /* Force single column layout */
+  .loginButtons {
+    flex-direction: column !important;
+    gap: 6px !important;
+  }
+}
+
+/* Fix for mobile browsers with address bar */
+@media screen and (max-height: 600px) {
+  .burgerMenuContent2 {
+    max-height: 75vh !important;
+  }
+  
+  .requestForm {
+    max-height: 75vh !important;
+  }
+}
+
+
+
+
+
+
+
+
+
